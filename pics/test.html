@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JQuery Cycle Plugin - Basic Demo</title>
+<style type="text/css">
+.slideshow { height: 240px; width: 185px; margin: auto }
+.slideshow img { padding: 0px; border: 0px solid #fff; background-color: #fff; }
+</style>
+
+<!-- include jQuery library -->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<!-- include Cycle plugin -->
+
+<script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshow5').cycle({
+		fx: 'fade', random: 1, speed: 600, timeout: 1750, pause: 1
+	});
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshow2').cycle({
+                fx: 'scrollLeft', random: 1, speed: 500, timeout: 1500, pause: 1
+        });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshow3').cycle({
+                fx: 'scrollLeft', random: 1, speed: 700, timeout: 1650, pause: 1
+        });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshow4').cycle({
+		fx: 'scrollRight', random: 1, speed: 600, timeout: 2050, pause: 1
+        });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshow1').cycle({
+		fx: 'scrollRight', random: 1, speed: 300, timeout: 2000, pause: 1
+        });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshow6').cycle({
+		fx: 'scrollDown', random: 1, speed: 300, timeout: 2100, pause: 1
+        });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshow7').cycle({
+		fx: 'scrollUp', random: 1, speed: 300, timeout: 1940, pause: 1
+        });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshow8').cycle({
+                fx: 'scrollDown', speed: 600, timeout: 1850, pause: 1
+        });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshow9').cycle({
+                fx: 'scrollUp', speed: 1000, timeout: 2250, pause: 1
+        });
+});
+</script>
+
+
+</head>
+
+<body>
+<table cellspacing="0">
+<tr>
+
+<!—-TOP LEFT (1)---> 
+<td>
+        <div class="slideshow1">
+               
+<img src="karolis-1.jpeg" width="185" height="240">
+<img src="karolis-br-1.jpeg" width="185" height="240">
+<img src="karolis-d-1.jpeg" width="185" height="240">
+<img src="andy-1.jpeg" width="185" height="240">
+<img src="andy-d-1.jpeg" width="185" height="240">
+<img src="nick-r-1.jpeg" width="185" height="240">
+
+<!—-TOP CENTER (2)---> 
+<td>
+        <div class="slideshow2">
+<img src="boris-andy-1.jpeg" width="185" height="240">
+<img src="boris-christie-1.jpeg" width="185" height="240">
+<img src="boris-karolis-1.jpeg" width="185" height="240">
+<img src="richf-1.jpeg" width="185" height="240">
+<img src="stacey-1.jpeg" width="185" height="240">
+<img src="stacey-yaniv-bryna-1.jpeg" width="185" height="240">
+<img src="yaniv-1.jpeg" width="185" height="240">
+
+<!—-TOP RIGHT (3)---> 
+<td>
+        <div class="slideshow3">
+      <img src="nick-1.jpeg" width="185" height="240">
+<img src="nick-2.jpeg" width="185" height="240">
+<img src="andy-nick-1.jpeg" width="185" height="240">
+<img src="richg-2.jpeg" width="185" height="240">
+</tr>
+
+<tr>
+<!—-MID-LEFT (4)---> 
+<td>
+<div class="slideshow4">
+<img src="boris-lr-1.jpeg" width="185" height="240">
+<img src="boris-ur-1.jpeg" width="185" height="240">
+<img src="boris-rich-2.jpeg" width="185" height="240">
+<img src="boris-rich-3.jpeg" width="185" height="240">
+<img src="boris-rich-4.jpeg" width="185" height="240">
+</div></td>
+
+<!—-MID-CENTER (5)---> 
+<td>
+<div class="slideshow5">
+<img src="boris-courtney-1.jpeg" width="185" height="240">
+<img src="boris-luke-1.jpeg" width="185" height="240">
+<img src="boris-nick-1.jpeg" width="185" height="240">
+<img src="boris-phils-1.jpeg" width="185" height="240">
+<img src="boris-stacey-1.jpeg" width="185" height="240">
+<img src="foursome-1.jpeg" width="185" height="240">
+</div></td>
+
+<!—-MID-RIGHT (6)---> 
+<td>
+<div class="slideshow6">
+<img src="christie-1.jpeg" width="185" height="240">
+<img src="christie-l-1.jpeg" width="185" height="240">
+<img src="christie-ul-2.jpeg" width="185" height="240">
+<img src="danielle-2.jpeg" width="185" height="240">
+<img src="danielle-u-1.jpeg" width="185" height="240">
+<img src="boris-loza-1.jpeg" width="185" height="240">
+<img src="boris-bl-1.jpeg" width="185" height="240">
+</div></td>
+
+</tr>
+
+<tr>
+
+<!—-BOTTOM LEFT (7)---> 
+<td>
+<div class="slideshow7">
+<img src="emma-ur-1.jpeg" width="185" height="240">
+<img src="boris-1.jpeg" width="185" height="240">
+<img src="boris-2.jpeg" width="185" height="240">
+<img src="boris-3.jpeg" width="185" height="240">
+<img src="emma-1.jpeg" width="185" height="240">
+<img src="richf-2.jpeg" width="185" height="240">
+</div></td>
+
+<!—-BOTTOM CENTER (8)---> 
+<td>
+        <div class="slideshow8">
+<img src="nick-up-1.jpeg" width="185" height="240">
+<img src="nick-ur-1.jpeg" width="185" height="240">
+<img src="karolis-u-1.jpeg" width="185" height="240">
+<img src="emma-ur-1.jpeg" width="185" height="240">
+<img src="danielle-u-1.jpeg" width="185" height="240">
+</div></td>
+
+<!—-BOTTOM RIGHT (9)---> 
+<td>
+        <div class="slideshow9">
+<img src="andy-ul-1.jpeg" width="185" height="240">
+<img src="andy-karolis-1.jpeg" width="185" height="240">
+<img src="andy-l-1.jpeg" width="185" height="240">
+<img src="emma-ul-1.jpeg" width="185" height="240">
+</div></td>
+
+</tr>
+
+</table>
+</body>
+</html>
+
