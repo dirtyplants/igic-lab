@@ -28,17 +28,37 @@ table.photogrid td > a { display: block; }
 <!-- include Cycle plugin -->
 <script type="text/javascript" src="scripts/jquery.cycle.all.js"></script>
 
+<!-- list of the .jpg/.jpeg files in pics/slideshow1 ... pics/slideshow9;
+     regenerate with scripts/make-slideshows.sh after adding/removing photos -->
+<script type="text/javascript" src="pics/slideshows.js"></script>
+
 <script type="text/javascript">
+// One entry per grid cell.  The photos themselves are not listed here: each
+// cell is filled with every image that scripts/make-slideshows.sh found in the
+// matching pics/slideshowN/ folder.
+var SLIDESHOW_FX = {
+    slideshow1: { fx: 'scrollRight', random: 0, speed: 300,  timeout: 2000, pause: 1 },
+    slideshow2: { fx: 'scrollDown',  random: 0, speed: 600,  timeout: 1380, pause: 1 },
+    slideshow3: { fx: 'scrollLeft',  random: 0, speed: 700,  timeout: 1650, pause: 1 },
+    slideshow4: { fx: 'scrollRight', random: 0, speed: 600,  timeout: 2050, pause: 1 },
+    slideshow5: { fx: 'fade',        random: 1, speed: 600,  timeout: 1750, pause: 1 },
+    slideshow6: { fx: 'scrollDown',  random: 0, speed: 300,  timeout: 2100, pause: 1 },
+    slideshow7: { fx: 'scrollUp',    random: 0, speed: 300,  timeout: 1940, pause: 1 },
+    slideshow8: { fx: 'scrollLeft',  random: 0, speed: 500,  timeout: 1500, pause: 1 },
+    slideshow9: { fx: 'scrollUp',    random: 0, speed: 1000, timeout: 2250, pause: 1 }
+};
+
 $(document).ready(function() {
-    $('.slideshow1').cycle({ fx: 'scrollRight', random: 0, speed: 300,  timeout: 2000, pause: 1 });
-    $('.slideshow2').cycle({ fx: 'scrollDown',  random: 0, speed: 600,  timeout: 1380, pause: 1 });
-    $('.slideshow3').cycle({ fx: 'scrollLeft',  random: 0, speed: 700,  timeout: 1650, pause: 1 });
-    $('.slideshow4').cycle({ fx: 'scrollRight', random: 0, speed: 600,  timeout: 2050, pause: 1 });
-    $('.slideshow5').cycle({ fx: 'fade',        random: 1, speed: 600,  timeout: 1750, pause: 1 });
-    $('.slideshow6').cycle({ fx: 'scrollDown',  random: 0, speed: 300,  timeout: 2100, pause: 1 });
-    $('.slideshow7').cycle({ fx: 'scrollUp',    random: 0, speed: 300,  timeout: 1940, pause: 1 });
-    $('.slideshow8').cycle({ fx: 'scrollLeft',  random: 0, speed: 500,  timeout: 1500, pause: 1 });
-    $('.slideshow9').cycle({ fx: 'scrollUp',    random: 0, speed: 1000, timeout: 2250, pause: 1 });
+    $.each(SLIDESHOW_FX, function(name, opts) {
+        var files = (window.SLIDESHOWS && SLIDESHOWS[name]) || [];
+        var $cell = $('.' + name);
+        $.each(files, function(i, file) {
+            $('<img>').attr({ src: 'pics/' + name + '/' + file,
+                              width: 138, height: 179 }).appendTo($cell);
+        });
+        // Cycle needs at least two frames; a single photo just sits there.
+        if (files.length > 1) { $cell.cycle(opts); }
+    });
 });
 </script>
 
@@ -69,108 +89,58 @@ $(document).ready(function() {
 <table class="photogrid" cellspacing="0" cellpadding="0">
 <tr>
 
-<!-- TOP LEFT (1) -->
+<!-- TOP LEFT (1): photos come from pics/slideshow1/ -->
 <td>
 <a href="people.html">
-<div class="slideshow slideshow1">
-<img src="pics/karolis-br-1.jpeg" width="138" height="179">
-<img src="pics/karolis-d-1.jpeg" width="138" height="179">
-<img src="pics/andy-1.jpeg" width="138" height="179">
-<img src="pics/andy-d-1.jpeg" width="138" height="179">
-<img src="pics/lucy-1.jpeg" width="138" height="179">
-</div></a></td>
+<div class="slideshow slideshow1"></div></a></td>
 
-<!-- TOP CENTER (2) -->
+<!-- TOP CENTER (2): photos come from pics/slideshow2/ -->
 <td>
 <a href="people.html">
-<div class="slideshow slideshow2">
-<img src="pics/boris-andy-1.jpeg" width="138" height="179">
-<!-- <img src="pics/boris-christie-1.jpeg" width="138" height="179"> -->
-<img src="pics/boris-karolis-1.jpeg" width="138" height="179">
-<img src="pics/richf-1.jpeg" width="138" height="179">
-<img src="pics/stacey-1.jpeg" width="138" height="179">
-<img src="pics/stacey-yaniv-bryna-1.jpeg" width="138" height="179">
-<img src="pics/yaniv-1.jpeg" width="138" height="179">
-</div></a></td>
+<div class="slideshow slideshow2"></div></a></td>
 
-<!-- TOP RIGHT (3) -->
+<!-- TOP RIGHT (3): photos come from pics/slideshow3/ -->
 <td>
 <a href="people.html">
-<div class="slideshow slideshow3">
-<img src="pics/richg-2.jpeg" width="138" height="179">
-<img src="pics/wallace-m.jpg" width="138" height="179">
-<img src="pics/boris-stacey-1.jpeg" width="138" height="179">
-</div></a></td>
-</tr>
-
-<tr>
-<!-- MID-LEFT (4) -->
-<td>
-<a href="people.html">
-<div class="slideshow slideshow4">
-<!-- <img src="pics/boris-lr-1.jpeg" width="138" height="179"> -->
-<img src="pics/boris-ur-1.jpeg" width="138" height="179">
-<img src="pics/andy-karolis-1.jpeg" width="138" height="179">
-<img src="pics/boris-rich-3.jpeg" width="138" height="179">
-<img src="pics/boris-loza-1.jpeg" width="138" height="179">
-<!-- <img src="pics/boris-rich-2.jpeg" width="138" height="179"> -->
-</div></a></td>
-
-<!-- MID-CENTER (5) -->
-<td>
-<a href="people.html">
-<div class="slideshow slideshow5">
-<img src="pics/boris-courtney-1.jpeg" width="138" height="179">
-<img src="pics/boris-luke-1.jpeg" width="138" height="179">
-<img src="pics/boris-phils-1.jpeg" width="138" height="179">
-<img src="pics/foursome-1.jpeg" width="138" height="179">
-</div></a></td>
-
-<!-- MID-RIGHT (6) -->
-<td>
-<a href="people.html">
-<div class="slideshow slideshow6">
-<!-- <img src="pics/christie-1.jpeg" width="138" height="179"> -->
-<img src="pics/darwin-r.jpg" width="138" height="179">
-<img src="pics/christie-l-1.jpeg" width="138" height="179">
-<img src="pics/christie-ul-2.jpeg" width="138" height="179">
-<img src="pics/danielle-2.jpeg" width="138" height="179">
-<!-- <img src="pics/danielle-u-1.jpeg" width="138" height="179"> -->
-</div></a></td>
+<div class="slideshow slideshow3"></div></a></td>
 </tr>
 
 <tr>
 
-<!-- BOTTOM LEFT (7) -->
+<!-- MID-LEFT (4): photos come from pics/slideshow4/ -->
 <td>
 <a href="people.html">
-<div class="slideshow slideshow7">
-<img src="pics/emma-ur-1.jpeg" width="138" height="179">
-<!-- <img src="pics/boris-1.jpeg" width="138" height="179"> -->
-<img src="pics/boris-2.jpeg" width="138" height="179">
-<img src="pics/emma-1.jpeg" width="138" height="179">
-<img src="pics/richf-2.jpeg" width="138" height="179">
-</div></a></td>
+<div class="slideshow slideshow4"></div></a></td>
 
-<!-- BOTTOM CENTER (8) -->
+<!-- MID-CENTER (5): photos come from pics/slideshow5/ -->
 <td>
 <a href="people.html">
-<div class="slideshow slideshow8">
-<img src="pics/andy-karolis-1.jpeg" width="138" height="179">
-<img src="pics/tanjona-1.jpeg" width="138" height="179">
-<img src="pics/karolis-u-1.jpeg" width="138" height="179">
-</div></a></td>
+<div class="slideshow slideshow5"></div></a></td>
 
-<!-- BOTTOM RIGHT (9) -->
+<!-- MID-RIGHT (6): photos come from pics/slideshow6/ -->
 <td>
 <a href="people.html">
-<div class="slideshow slideshow9">
-<img src="pics/andy-ul-1.jpeg" width="138" height="179">
-<img src="pics/andy-l-1.jpeg" width="138" height="179">
-<img src="pics/emma-ul-1.jpeg" width="138" height="179">
-<img src="pics/boris-3.jpeg" width="138" height="179">
-</div></a></td>
+<div class="slideshow slideshow6"></div></a></td>
 </tr>
+
+<tr>
+
+<!-- BOTTOM LEFT (7): photos come from pics/slideshow7/ -->
+<td>
+<a href="people.html">
+<div class="slideshow slideshow7"></div></a></td>
+
+<!-- BOTTOM CENTER (8): photos come from pics/slideshow8/ -->
+<td>
+<a href="people.html">
+<div class="slideshow slideshow8"></div></a></td>
+
+<!-- BOTTOM RIGHT (9): photos come from pics/slideshow9/ -->
+<td>
+<a href="people.html">
+<div class="slideshow slideshow9"></div></a></td>
+</tr>
+
 </table>
 </P>
 
